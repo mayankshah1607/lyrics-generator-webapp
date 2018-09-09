@@ -14,14 +14,16 @@ class Navigation extends Component {
                 <Menu secondary>
                     <Menu.Item name='Mayank Shah' 
                     active={this.state.activeItem === 'Mayank Shah'} 
-                    href='https://www.google.com' onClick={this.handleItemClick} >
+                    href='https://github.com/mayankshah1607' 
+                    onClick={this.handleItemClick} >
                         <strong>Mayank Shah</strong>
                     </Menu.Item>
                     
                     <Menu.Menu position='right'>
                     <Menu.Item name='View Repository' 
                     active={this.state.activeItem === 'View Repository'} 
-                    onClick={this.handleItemClick} >
+                    onClick={this.handleItemClick} 
+                    href='https://github.com/mayankshah1607/Deep-Learning-Lyrics-Generator.git'>
                         <strong>View Repository</strong>
                     </Menu.Item>
                     </Menu.Menu>

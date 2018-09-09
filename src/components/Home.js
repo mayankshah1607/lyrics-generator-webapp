@@ -14,7 +14,7 @@ class Home extends Component{
 
     onGenerate = () => {
         this.setState({showLyrics: true})
-        fetch('http://localhost:8000/predict',{
+        fetch('https://dl-lyrics.herokuapp.com/predict',{
             method: 'get',
             headers: {'Content-type':'application/json'},
         })

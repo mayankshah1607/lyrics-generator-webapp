@@ -28,7 +28,7 @@ class Lyrics extends Component{
                 <div className='ma3'>
                     <p className='fw6 f2'>Here's a song I wrote for you..</p>
                     {newText}
-                    <Button basic color='black' href='/' size='medium' className='mb4'>
+                    <Button basic color='black' href='https://mayankshah1607.github.io/lyrics-generator-webapp/' size='medium' className='mb6'>
                         <strong>Generate another song!</strong>
                     </Button>
                 </div>
