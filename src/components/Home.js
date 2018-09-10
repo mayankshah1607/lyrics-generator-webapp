@@ -8,11 +8,14 @@ class Home extends Component{
         super();
         this.state = {
             showLyrics: false,
-            lyrics: '' 
+            lyrics: '',
+            endSong: false 
         }
     }
 
     onGenerate = () => {
+
+        
         this.setState({showLyrics: true})
         fetch('https://dl-lyrics.herokuapp.com/predict',{
             method: 'get',
@@ -22,7 +25,20 @@ class Home extends Component{
         .then( data => {
             console.log(data.lyrics)
             this.setState({lyrics: data.lyrics})
+
+            fetch('https://dl-lyrics.herokuapp.com/predict',{
+            method: 'get',
+            headers: {'Content-type':'application/json'},
+                })
+                .then(response2 => response2.json())
+                .then( data2 => {
+                    console.log(data2.lyrics)
+                    this.setState({lyrics: this.state.lyrics + data2.lyrics, endSong: true})
+                    
+                })
         })
+
+
     }
 
     render(){
@@ -30,7 +46,7 @@ class Home extends Component{
             <div>
                 {
                     this.state.showLyrics ? 
-                    <Lyrics text={this.state.lyrics}/>
+                    <Lyrics text={this.state.lyrics} endSong = {this.state.endSong}/>
                     :
                     <div className='dib mt6'>                    
                         <p className='fw6 f1'> Generate Song Lyrics with AI</p>

@@ -4,10 +4,10 @@ import { Button, Loader } from 'semantic-ui-react';
 class Lyrics extends Component{
 
     isLoading = () => {
-        if (this.props.text==='') {
-            return true
+        if (this.props.endSong===true) {
+            return false
         }
-        else { return false}
+        else { return true}
     }
 
 
